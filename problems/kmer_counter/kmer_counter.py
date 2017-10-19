@@ -34,14 +34,14 @@ kmers = {}
 i = 0
 add = ""
 j = 0
-z = 0
+k = 0
 
 while i < nkmers:
         add = ""
         j = 0
-        z = i
+        k = i
         while j < kmer_size:
-                add += input[z+j]
+                add += input[k+j]
                 j += 1
         if add in kmers:
                 kmers[add] += 1
