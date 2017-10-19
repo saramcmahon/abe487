@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Kmer counter 
 
 from collections import Counter
 import sys, string
@@ -29,7 +30,7 @@ if kmer_size > len(input):
 	print('There are no {}-mers in "{}"'.format(kmer_size, args[1]))
 	sys.exit(1)
 
-kmers = {}
+kmer = {}
 
 i = 0
 add = ""
@@ -43,16 +44,16 @@ while i < nkmers:
         while j < kmer_size:
                 add += input[k+j]
                 j += 1
-        if add in kmers:
-                kmers[add] += 1
+        if add in kmer:
+                kmer[add] += 1
         else:
-                kmers[add] = 1
+                kmer[add] = 1
         i += 1
 
 print('{}'.format(input))
 
-for x in sorted(kmers):
-        print(x, kmers[x])
+for x in sorted(kmer):
+        print(x, kmer[x])
 
 #else:
 #	print('input "{}" size "{}" nkmer "{}"'.format(input, kmer_size, nkmers))
